@@ -4,6 +4,8 @@ import { useTelegram } from '../../hooks/useTelegram';
 
 export const Input = () => {
 	const { tg } = useTelegram();
+
+	const invalidChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiop[]/asdfghjkl;'zxcvbnm,.!@#$%^&*()_+|}{:\">?<`~\\".split('');
   
   const [value, setValue] = useState('');
 
@@ -18,8 +20,8 @@ export const Input = () => {
 	}
 
 	return (
-		<input value={value} placeholder='0' type="number" pattern="\d*" className="input" maxLength={8} autoFocus onKeyDown={(e) => {
-			if (e.key === 'e') e.preventDefault();
+		<input value={value} placeholder='0' type="text" pattern="\d*" className="input" maxLength={8} autoFocus onKeyDown={(e) => {
+			if (invalidChars.includes(e.key)) e.preventDefault();
 		}} onChange={changeHandler} />
 	);
 };
