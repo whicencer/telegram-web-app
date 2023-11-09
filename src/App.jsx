@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Header />
-      <input value={value} type="text" className="input" maxLength={8} autoFocus onKeyDown={(e) => {
+      <input value={value} placeholder='0' type="text" className="input" maxLength={8} autoFocus onKeyDown={(e) => {
         if (invalidChars.includes(e.key)) e.preventDefault();
       }} onChange={changeHandler} />
     </>
