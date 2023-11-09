@@ -6,6 +6,7 @@ export const Header = () => {
 
 	return (
 		<header className='header'>
+			<img src={user?.photo_url} alt="user_avatar" />
 			<h2>Hello, {user?.first_name || 'Name'}!</h2>
 		</header>
 	);

@@ -1,4 +1,12 @@
 .header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
 	background-color: var(--tg-theme-bg-color);
 	padding: 15px;
+}
+
+.header img {
+	border-radius: 50%;
 }
