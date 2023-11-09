@@ -9,5 +9,5 @@
 }
 
 .input::placeholder {
-  color: #000;
+  color: var(--tg-theme-text-color);
 }
