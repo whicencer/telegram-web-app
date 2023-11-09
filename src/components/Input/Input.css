@@ -1,0 +1,13 @@
+.input {
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  caret-color: var(--tg-theme-button-color);
+}
+
+.input::placeholder {
+  color: #000;
+}
