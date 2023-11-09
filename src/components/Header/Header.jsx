@@ -7,7 +7,10 @@ export const Header = () => {
 
 	return (
 		<header className='header'>
-			<h2>Hello, {user?.first_name || 'Name'}!</h2>
+			<div>
+				<h2>Hello, {user?.first_name || 'Name'}!</h2>
+				<p className='header_description'>It's just a test mini application in Telegram 🛸</p>
+			</div>
 			<Button onClick={onClose}>Exit</Button>
 		</header>
 	);
