@@ -10,17 +10,17 @@ export const Input = () => {
   const [value, setValue] = useState('');
 
   const changeHandler = (e) => {
-    setValue(e.target.value.replace(/[^0-9.]/g,'').replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+    setValue(e.target.value.replace(/^0/g).replace(/[^0-9.]/g,'').replace(/\B(?=(\d{3})+(?!\d))/g, ","));
   };
 
-	if (value || value !== '0') {
+	if (value) {
 		tg.MainButton.show();
 	} else {
 		tg.MainButton.hide();
 	}
 
 	return (
-		<input value={value} min={1} placeholder='0' type="text" className="input" maxLength={8} autoFocus onKeyDown={(e) => {
+		<input value={value} placeholder='0' type="text" className="input" maxLength={8} autoFocus onKeyDown={(e) => {
 			if (invalidChars.includes(e.key)) e.preventDefault();
 		}} onChange={changeHandler} />
 	);
