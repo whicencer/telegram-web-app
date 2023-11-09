@@ -5,7 +5,7 @@ import { useTelegram } from '../../hooks/useTelegram';
 export const Input = () => {
 	const { tg } = useTelegram();
 
-	const invalidChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiop[]/asdfghjkl;'zxcvbnm,.!@#$%^&*()_+|}{:\">?<`~\\".split('');
+	const invalidChars = "0QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiop[]/asdfghjkl;'zxcvbnm,.!@#$%^&*()_+|}{:\">?<`~\\".split('');
   
   const [value, setValue] = useState('');
 
