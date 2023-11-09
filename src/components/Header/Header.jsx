@@ -8,7 +8,7 @@ export const Header = () => {
 	return (
 		<header className='header'>
 			<h2>Hello, {user?.first_name || 'Name'}!</h2>
-			<Button onClick={onClose}>Close App</Button>
+			<Button onClick={onClose}>Exit</Button>
 		</header>
 	);
 };
