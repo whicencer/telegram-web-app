@@ -13,7 +13,7 @@ export const Input = () => {
     setValue(e.target.value.replace(/[^0-9.]/g,'').replace(/\B(?=(\d{3})+(?!\d))/g, ","));
   };
 
-	if (value) {
+	if (value || value !== '0') {
 		tg.MainButton.show();
 	} else {
 		tg.MainButton.hide();
