@@ -15,6 +15,8 @@ export const Input = () => {
 
 	if (value) {
 		tg.MainButton.show();
+	} else {
+		tg.MainButton.hide();
 	}
 
 	return (
