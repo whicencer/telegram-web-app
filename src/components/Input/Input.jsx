@@ -5,7 +5,7 @@ import { useTelegram } from '../../hooks/useTelegram';
 export const Input = () => {
 	const { tg } = useTelegram();
 
-	const invalidChars = "0QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiop[]/asdfghjkl;'zxcvbnm,.!@#$%^&*()_+|}{:\">?<`~\\".split('');
+	const invalidChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiop[]/asdfghjkl;'zxcvbnm,.!@#$%^&*()_+|}{:\">?<`~\\".split('');
   
   const [value, setValue] = useState('');
 
@@ -20,7 +20,7 @@ export const Input = () => {
 	}
 
 	return (
-		<input value={value} placeholder='0' type="text" className="input" maxLength={8} autoFocus onKeyDown={(e) => {
+		<input value={value} min={1} placeholder='0' type="text" className="input" maxLength={8} autoFocus onKeyDown={(e) => {
 			if (invalidChars.includes(e.key)) e.preventDefault();
 		}} onChange={changeHandler} />
 	);
