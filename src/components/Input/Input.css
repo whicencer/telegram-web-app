@@ -1,6 +1,6 @@
 .input {
   background: transparent;
-  border: 0;
+  border: 1px solid #000;
   outline: none;
   font-size: 40px;
   font-family: "Poppins", sans-serif;
@@ -8,7 +8,7 @@
   caret-color: var(--tg-theme-button-color);
   color: var(--tg-theme-text-color);
 
-  max-width: 50%;
+  width: 70vw;
 }
 
 .input::placeholder {
