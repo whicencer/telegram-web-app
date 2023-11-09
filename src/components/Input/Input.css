@@ -6,6 +6,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   caret-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-text-color);
 }
 
 .input::placeholder {
