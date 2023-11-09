@@ -14,7 +14,7 @@ html, body {
 
 .input {
   appearance: none;
-  -moz-appearance: textfield;
+  -moz-appearance: none;
   background: transparent;
   border: 0;
   outline: none;
