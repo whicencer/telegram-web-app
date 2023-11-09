@@ -6,7 +6,10 @@ function App() {
   return (
     <>
       <Header />
-      <Input />
+      <div className='sumInput'>
+        <Input />
+        <h2>USDT</h2>
+      </div>
     </>
   );
 };

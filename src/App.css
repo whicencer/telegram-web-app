@@ -11,3 +11,9 @@ html, body {
   color: var(--tg-theme-text-color);
   font-family: "Poppins", sans-serif;
 }
+
+.sumInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
