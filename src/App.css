@@ -13,8 +13,6 @@ html, body {
 }
 
 .input {
-  appearance: none;
-  -moz-appearance: none;
   background: transparent;
   border: 0;
   outline: none;
