@@ -10,6 +10,7 @@ function App() {
         <Input />
         <h2>USDT</h2>
       </div>
+      <TonConnectButton />
     </>
   );
 };

@@ -1,14 +1,14 @@
-const tg = window.Telegram.WebApp;
+import WebApp from '@twa-dev/sdk';
 
 export const useTelegram = () => {
-	const user = tg.initDataUnsafe.user;
+	const user = WebApp.initDataUnsafe.user;
 
 	const onClose = () => {
-		tg.close();
+		WebApp.close();
 	};
 
 	return {
-		tg,
+		WebApp,
 		onClose,
 		user,
 	};

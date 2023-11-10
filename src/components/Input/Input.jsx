@@ -3,7 +3,7 @@ import './Input.css';
 import { useTelegram } from '../../hooks/useTelegram';
 
 export const Input = () => {
-	const { tg } = useTelegram();
+	const { WebApp } = useTelegram();
 
 	const invalidChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiop[]/asdfghjkl;'zxcvbnm,.!@#$%^&*()_+|}{:\">?<`~\\".split('');
   
@@ -14,9 +14,9 @@ export const Input = () => {
   };
 
 	if (value) {
-		tg.MainButton.show();
+		WebApp.MainButton.show();
 	} else {
-		tg.MainButton.hide();
+		WebApp.MainButton.hide();
 	}
 
 	return (
