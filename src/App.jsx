@@ -1,14 +1,12 @@
 import { Header } from './components/Header/Header';
-import { Input } from './components/Input/Input';
-import { useTonConnectUI, useTonWallet } from '@tonconnect/ui-react';
-import { Button } from './components/Button/Button';
+import { useWalletAuth } from './hooks/useWalletAuth';
 import './App.css';
-import { useState } from 'react';
+import { CreateTransaction } from './components/CreateTransaction/CreateTransaction';
 
 function App() {
   // const [tonConnectUI, setOptions] = useTonConnectUI();
-  const wallet = useTonWallet();
   // const [currentAddress, setCurrentAddress] = useState();
+  const { isAuth } = useWalletAuth();
 
   // const transaction = {
   //   validUntil: Math.floor(Date.now() / 1000) + 600,
@@ -25,19 +23,9 @@ function App() {
   return (
     <>
       <Header />
-      <h2></h2>
-      <div className='sumInput'>
-        <Input />
-        <h2>USDT</h2>
-      </div>
       {
-        wallet
-          ? (
-            <>
-              <input type="text" onChange={e => setCurrentAddress(e.target.value)} />
-              <Button onClick={() => tonConnectUI.sendTransaction(transaction)}>Send transaction</Button>
-            </>
-          )
+        isAuth
+          ? <CreateTransaction />
           : null
       }
     </>
