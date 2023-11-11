@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className='input'>
+      <div className='sumInput'>
         <Input />
         <h2>USDT</h2>
       </div>

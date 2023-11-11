@@ -1,5 +1,6 @@
 import { useTelegram } from '../../hooks/useTelegram';
-import { Button } from '../Button/Button';
+// import { Button } from '../Button/Button';
+import { TonConnectButton } from '@tonconnect/ui-react';
 import './Header.css';
 
 export const Header = () => {
@@ -11,7 +12,8 @@ export const Header = () => {
 				<h2>Hello, {user?.first_name || 'Name'}!</h2>
 				<p className='header_description'>It's just a test mini application in Telegram 🛸</p>
 			</div>
-			<Button onClick={onClose}>Exit</Button>
+			<TonConnectButton style={{ marginLeft: 20, float: 'right' }} />
+			{/* <Button onClick={onClose}>Exit</Button> */}
 		</header>
 	);
 };
