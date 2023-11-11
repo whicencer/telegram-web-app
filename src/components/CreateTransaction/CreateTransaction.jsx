@@ -22,7 +22,7 @@ export const CreateTransaction = () => {
 			</div>
 			<div className='sumInput'>
         <NumberInput setNumber={setTransactionSum} />
-        <h2>USDT</h2>
+        <h2>TON</h2>
       </div>
 		</div>
 	);
