@@ -2,15 +2,15 @@ import { useState } from 'react';
 import '../Input.css';
 
 export const NumberInput = ({setNumber}) => {
-	const invalidChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiop[]/asdfghjkl;'zxcvbnm,.!@#$%^&*()_+|}{:\">?<`~\\".split('');
+	const invalidChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiop[]/asdfghjkl;'zxcvbnm,!@#$%^&*()_+|}{:\">?<`~\\".split('');
   
   const [value, setValue] = useState('');
 
   const changeHandler = (e) => {
-		const value = e.target.value.replace(/^0/g).replace(/[^0-9.]/g,'').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+		const value = e.target.value.replace(/[^0-9.]/g,'').replace(/\B(?=(\d{3})+(?!\d))/g, " ")
     setValue(value);
 
-		setNumber(Number(value.replace(/,/g, '')));
+		setNumber(Number(value.replace(/\s/g, '')));
   };
 
 	return (
