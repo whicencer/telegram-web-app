@@ -4,9 +4,11 @@ import { Button } from '../Button/Button';
 import { NumberInput } from '../Input/NumberInput/NumberInput';
 import { useTonConnectUI } from '@tonconnect/ui-react';
 import './CreateTransaction.css';
+import { useTelegram } from '../../hooks/useTelegram';
 
 export const CreateTransaction = () => {
 	const [tonConnectUI] = useTonConnectUI();
+	const { WebApp } = useTelegram();
 	
 	const [address, setAddress] = useState('');
 	const [transactionSum, setTransactionSum] = useState('0');
@@ -17,23 +19,25 @@ export const CreateTransaction = () => {
 		setAddress(text);
 	};
 
-	const createTransaction = () => {
-		const transaction = {
-			validUntil: Math.floor(Date.now() / 1000) + 600,
-			messages: [
-				{
-					// The receiver's address.
-					address: address,
-					// Amount to send in nanoTON. For example, 0.005 TON is 5000000 nanoTON.
-					amount: transactionSum*1000000000, // Amout in nanoTON
-				},
-			]
-		};
-
-		if (transactionSum <= 0) return;
-
-		tonConnectUI.sendTransaction(transaction)
+	const transaction = {
+		validUntil: Math.floor(Date.now() / 1000) + 600,
+		messages: [
+			{
+				// The receiver's address.
+				address: address,
+				// Amount to send in nanoTON. For example, 0.005 TON is 5000000 nanoTON.
+				amount: transactionSum*1000000000, // Amout in nanoTON
+			},
+		]
 	};
+
+	if (transactionSum <= 0) {
+		WebApp.MainButton.hide();
+		return;
+	} else {
+		WebApp.MainButton.show();
+		WebApp.MainButton.onClick(() => tonConnectUI.sendTransaction(transaction));
+	}
 
 	return (
 		<div className='createTransaction'>
@@ -45,7 +49,6 @@ export const CreateTransaction = () => {
         <NumberInput setNumber={setTransactionSum} />
         <h2>TON</h2>
       </div>
-			<Button onClick={createTransaction}>Send transaction</Button>
 		</div>
 	);
 };
