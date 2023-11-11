@@ -16,7 +16,7 @@ export const CreateTransaction = () => {
 
 	return (
 		<>
-			<Input style={{ marginLeft: 15 }} type="text" value={address} onChange={e => setAddress(e.target.value)} />
+			<input type="text" style={{ border: '1px solid white', background: 'transparent', outline: 0 }} />
 			<div className='sumInput'>
         <NumberInput value={inputSum} onChange={changeSumHandler} />
         <h2>USDT</h2>
