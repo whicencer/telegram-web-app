@@ -6,6 +6,9 @@
 
   padding: 15px;
 
+  caret-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-text-color);
+
   font-size: 18px;
 }
 
@@ -23,7 +26,5 @@
   font-size: 40px;
   font-weight: 800;
 
-  caret-color: var(--tg-theme-button-color);
-  color: var(--tg-theme-text-color);
   width: 70vw;
 }
