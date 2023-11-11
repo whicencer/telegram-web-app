@@ -1,7 +1,10 @@
 .input {
   background-color: var(--tg-theme-background-color);
   border: 1px solid var(--tg-theme-hint-color);
+  border-radius: 20px;
   outline: none;
+
+  padding: 15px;
 
   font-size: 18px;
 }
@@ -14,6 +17,7 @@
 .input.sum {
   background: transparent;
   border: none;
+  border-radius: 0;
 
   font-family: "Poppins", sans-serif;
   font-size: 40px;
