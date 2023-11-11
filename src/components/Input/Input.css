@@ -12,5 +12,5 @@
 }
 
 .input::placeholder {
-  color: #f0f0f0;
+  color: rgba(240, 240, 240, 0.387);
 }
