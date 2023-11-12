@@ -5,7 +5,6 @@ import { NumberInput } from '../Input/NumberInput/NumberInput';
 import { useTonConnectUI } from '@tonconnect/ui-react';
 import './CreateTransaction.css';
 import { useTelegram } from '../../hooks/useTelegram';
-import { sendTransaction } from './services/sendTransaction';
 
 export const CreateTransaction = () => {
 	const [tonConnectUI] = useTonConnectUI();
