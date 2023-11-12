@@ -22,7 +22,7 @@ export const CreateTransaction = () => {
 
 	const handleSendTransaction = () => {
 		sendTransaction(address, transactionSum, tonConnectUI.sendTransaction);
-		location.reload();
+		setTimeout(() => location.reload(), 2000);
 	};
 
 	if (transactionSum <= 0) {
