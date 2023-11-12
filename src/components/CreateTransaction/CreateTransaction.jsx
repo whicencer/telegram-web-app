@@ -33,7 +33,6 @@ export const CreateTransaction = () => {
 
 	if (transactionSum <= 0) {
 		WebApp.MainButton.hide();
-		return;
 	} else {
 		WebApp.MainButton.show();
 		WebApp.MainButton.onClick(() => tonConnectUI.sendTransaction(transaction));
