@@ -5,6 +5,7 @@ import { NumberInput } from '../Input/NumberInput/NumberInput';
 import { useTonConnectUI } from '@tonconnect/ui-react';
 import './CreateTransaction.css';
 import { useTelegram } from '../../hooks/useTelegram';
+import { sendTransaction } from './services/sendTransaction';
 
 export const CreateTransaction = () => {
 	const [tonConnectUI] = useTonConnectUI();
@@ -19,23 +20,17 @@ export const CreateTransaction = () => {
 		setAddress(text);
 	};
 
-	const transaction = {
-		validUntil: Math.floor(Date.now() / 1000) + 600,
-		messages: [
-			{
-				// The receiver's address.
-				address: address,
-				// Amount to send in nanoTON. For example, 0.005 TON is 5000000 nanoTON.
-				amount: transactionSum*1000000000, // Amout in nanoTON
-			},
-		]
+	const handleSendTransaction = () => {
+		sendTransaction(address, transactionSum, tonConnectUI.sendTransaction);
+		location.reload();
 	};
 
 	if (transactionSum <= 0) {
 		WebApp.MainButton.hide();
 	} else {
 		WebApp.MainButton.show();
-		WebApp.MainButton.onClick(() => tonConnectUI.sendTransaction(transaction));
+		WebApp.MainButton.setText('Send transaction');
+		WebApp.MainButton.onClick(handleSendTransaction);
 	}
 
 	return (

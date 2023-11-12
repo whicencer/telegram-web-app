@@ -4,8 +4,6 @@ import { useWallet } from './hooks/useWallet';
 import './App.css';
 
 function App() {
-  // const [tonConnectUI, setOptions] = useTonConnectUI();
-  // const [currentAddress, setCurrentAddress] = useState();
   const { isAuth, balance } = useWallet();
 
   return (
