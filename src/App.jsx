@@ -1,16 +1,17 @@
 import { Header } from './components/Header/Header';
-import { useWalletAuth } from './hooks/useWalletAuth';
-import './App.css';
 import { CreateTransaction } from './components/CreateTransaction/CreateTransaction';
+import { useWallet } from './hooks/useWallet';
+import './App.css';
 
 function App() {
   // const [tonConnectUI, setOptions] = useTonConnectUI();
   // const [currentAddress, setCurrentAddress] = useState();
-  const { isAuth } = useWalletAuth();
+  const { isAuth, balance } = useWallet();
 
   return (
     <>
       <Header />
+      <h3 style={{ marginLeft: 15 }}>Your balance: {balance} TON</h3>
       {
         isAuth
           ? <CreateTransaction />
