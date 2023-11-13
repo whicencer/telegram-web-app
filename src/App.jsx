@@ -10,15 +10,15 @@ function App() {
   return (
     <>
       <Header />
-      <div className='balance'>
-        <h3>Your balance</h3>
-        <h2>{balance} <span>TON</span></h2>
-      </div>
       {
         isAuth
           ? <DonationLink />
           : null
       }
+      <div className='balance'>
+        <h3>Your balance</h3>
+        <h2>{balance} <span>TON</span></h2>
+      </div>
     </>
   );
 };
