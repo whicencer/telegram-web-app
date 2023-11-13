@@ -10,7 +10,7 @@ function App() {
     <>
       <Header />
       <div className='balance'>
-        <h3>You balance</h3>
+        <h3>Your balance</h3>
         <h2>{balance} <span>TON</span></h2>
       </div>
       {
