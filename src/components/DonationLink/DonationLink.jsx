@@ -23,7 +23,7 @@ export const DonationLink = () => {
 				<div className="donationLink__linkbox">
 					<span>{link}</span>
 				</div>
-				<Button onClick={copyButtonClick} style={{ backgroundColor: isCopied && '#40E13E' }}>{ isCopied ? "Copied!" : "Copy"}</Button>
+				<Button onClick={copyButtonClick} style={{ backgroundColor: isCopied && '#1DCB1A' }}>{ isCopied ? "Copied!" : "Copy"}</Button>
 			</div>
 		</div>
 	);
