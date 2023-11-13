@@ -18,14 +18,12 @@
 }
 
 .donationLink__linkbox {
-	/* background-color: var(--tg-theme-secondary-bg-color); */
+	background-color: var(--tg-theme-secondary-bg-color);
 	display: inline-block;
-	background-color: #18212D;
 	padding: 15px;
 	border-radius: 15px;
 }
 .donationLink__linkbox span {
 	font-size: 14px;
-	/* color: var(--tg-theme-text-color); */
-	color: #fff;
+	color: var(--tg-theme-text-color);
 }
