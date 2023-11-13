@@ -10,7 +10,7 @@ export const Header = () => {
 		<header className='header'>
 			<div>
 				<h2>Hello, {user?.first_name || 'Name'}!</h2>
-				<p className='header_description'>It's just a test mini application in Telegram 🛸</p>
+				<p className='header_description'>It’s just an application to make donates with TON 🛸</p>
 			</div>
 			<TonConnectButton style={{ marginLeft: 20, float: 'right' }} />
 			{/* <Button onClick={onClose}>Exit</Button> */}

@@ -9,7 +9,10 @@ function App() {
   return (
     <>
       <Header />
-      <h3 style={{ marginLeft: 15 }}>Your balance: {balance} TON</h3>
+      <div className='balance'>
+        <h3>You balance</h3>
+        <h2>{balance} <span>TON</span></h2>
+      </div>
       {
         isAuth
           ? <CreateTransaction />
