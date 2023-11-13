@@ -15,10 +15,10 @@ function App() {
           ? <DonationLink />
           : null
       }
-      <div className='balance'>
+      {/* <div className='balance'>
         <h3>Your balance</h3>
         <h2>{balance} <span>TON</span></h2>
-      </div>
+      </div> */}
     </>
   );
 };
