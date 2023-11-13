@@ -31,10 +31,7 @@ export const CreateTransaction = () => {
 				},
 			]
 		};
-		tonConnectUI.sendTransaction(transaction)
-			.then(() => {
-				location.reload();
-			});
+		tonConnectUI.sendTransaction(transaction);
 	};
 
 	if (transactionSum <= 0) {
