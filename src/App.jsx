@@ -1,7 +1,8 @@
 import { Header } from './components/Header/Header';
-import { CreateTransaction } from './components/CreateTransaction/CreateTransaction';
+// import { CreateTransaction } from './components/CreateTransaction/CreateTransaction';
 import { useWallet } from './hooks/useWallet';
 import './App.css';
+import { DonationLink } from './components/DonationLink/DonationLink';
 
 function App() {
   const { isAuth, balance } = useWallet();
@@ -15,7 +16,7 @@ function App() {
       </div>
       {
         isAuth
-          ? <CreateTransaction />
+          ? <DonationLink />
           : null
       }
     </>
