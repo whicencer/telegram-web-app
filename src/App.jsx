@@ -13,7 +13,7 @@ function App() {
       {
         isAuth
           ? <DonationLink />
-          : null
+          : <h2>You need to authorize first</h2>
       }
       {/* <div className='balance'>
         <h3>Your balance</h3>
