@@ -19,8 +19,8 @@ export const DonationLink = () => {
 				setTimeout(() => setIsCopied(false), 2500);
 			});
 	};
-	WebApp.MainButton.show();
-	WebApp.MainButton.onClick = () => {
+	const button = WebApp.MainButton.show();
+	button.onClick = () => {
 		WebApp.sendData(JSON.stringify(linkId));
 		WebApp.showAlert('erghler');
 	};
