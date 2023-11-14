@@ -6,7 +6,7 @@ import { useWallet } from "../../hooks/useWallet";
 
 export const DonationLink = () => {
 	const { address } = useWallet();
-	const [link, setLink] = useState(`https://t.me/bot_name/${address.replace(/0:/g, '')}`);
+	const [link, setLink] = useState(`https://t.me/bot_name/${address.replace(/0:/g, '').substring(8,18)}`);
 	const [isCopied, setIsCopied] = useState(false);
 	const { WebApp } = useTelegram();
 
