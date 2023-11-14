@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../Button/Button";
 import './DonationLink.css';
 import { useTelegram } from "../../hooks/useTelegram";
@@ -6,9 +6,16 @@ import { useWallet } from "../../hooks/useWallet";
 
 export const DonationLink = () => {
 	const { address } = useWallet();
-	const link = `https://t.me/bot_name/${address.substring(11,21)}`;
 	const [isCopied, setIsCopied] = useState(false);
 	const { WebApp } = useTelegram();
+
+	const linkId = address.substring(11,21);
+	const link = `https://t.me/bot_name/${linkId}`;
+
+	useEffect(() => {
+		WebApp.sendData(JSON.stringify(linkId));
+		WebApp.showAlert('send');
+	}, []);
 
 	const copyButtonClick = () => {
 		navigator.clipboard.writeText(link)
