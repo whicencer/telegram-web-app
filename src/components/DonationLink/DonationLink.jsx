@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Button } from "../Button/Button";
 import './DonationLink.css';
 import { useTelegram } from "../../hooks/useTelegram";
+import { useWallet } from "../../hooks/useWallet";
 
 export const DonationLink = () => {
-	const [link, setLink] = useState('https://t.me/bot_name/4ealrk62djks');
+	const { address } = useWallet();
+	const [link, setLink] = useState(`https://t.me/bot_name/${address.replace(/0:/g, '')}`);
 	const [isCopied, setIsCopied] = useState(false);
 	const { WebApp } = useTelegram();
 

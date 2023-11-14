@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 export const useWallet = () => {
 	const tonWallet = useTonWallet();
 	const [balance, setBalance] = useState(0);
+	const address = tonWallet?.account.address;
 
 	useEffect(() => {
 		async function getBalance() {
@@ -22,5 +23,5 @@ export const useWallet = () => {
 		getBalance();
 	}, [tonWallet]);
 
-	return { isAuth: !!tonWallet, balance, tonWallet };
+	return { isAuth: !!tonWallet, balance, address, tonWallet };
 };
