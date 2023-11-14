@@ -1,21 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "../Button/Button";
 import './DonationLink.css';
-import { useTelegram } from "../../hooks/useTelegram";
 import { useWallet } from "../../hooks/useWallet";
 
 export const DonationLink = () => {
 	const { address } = useWallet();
 	const [isCopied, setIsCopied] = useState(false);
-	const { WebApp } = useTelegram();
-	const authorized = WebApp.CloudStorage.getItem('authorized');
 
 	const linkId = address.substring(11,21);
 	const link = `https://t.me/bot_name/${linkId}`;
-
-	if (!authorized) {
-		WebApp.sendData(JSON.stringify(linkId));
-	}
 
 	const copyButtonClick = () => {
 		navigator.clipboard.writeText(link)

@@ -3,14 +3,9 @@ import { Header } from './components/Header/Header';
 import { useWallet } from './hooks/useWallet';
 import './App.css';
 import { DonationLink } from './components/DonationLink/DonationLink';
-import { useTelegram } from './hooks/useTelegram';
 
 function App() {
   const { isAuth, balance } = useWallet();
-  const { WebApp } = useTelegram();
-  if (isAuth) {
-    WebApp.CloudStorage.setItem('authorized', true);
-  }
 
   return (
     <>
