@@ -5,6 +5,7 @@ import { MainPage } from './pages/MainPage.jsx';
 import { DonationPage } from './pages/DonationPage.jsx';
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { useWallet } from './hooks/useWallet.js';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,8 @@ const router = createBrowserRouter([
   }
 ]);
 
+const { isAuth } = useWallet();
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <TonConnectUIProvider
@@ -26,7 +29,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       manifestUrl='https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json'
     >
       <App />
-      <RouterProvider router={router} />
+      {
+        isAuth
+          ? <RouterProvider router={router} />
+          : <h2>You need to authorize first</h2>
+      }
     </TonConnectUIProvider>
   </React.StrictMode>,
 );
