@@ -22,7 +22,7 @@ export const DonationLink = () => {
 			<h3>Your donate link</h3>
 			<div className="donationLink__link">
 				<div className="donationLink__linkbox">
-					<span>{link}</span>
+					<p>{link}</p>
 				</div>
 				<Button onClick={copyButtonClick} style={{ backgroundColor: isCopied && '#25BE45' }}>{ isCopied ? "Copied! 🎉" : "Copy"}</Button>
 			</div>

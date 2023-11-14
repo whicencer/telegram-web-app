@@ -20,11 +20,16 @@
 
 .donationLink__linkbox {
 	background-color: var(--tg-theme-bg-color);
-	display: inline-block;
 	padding: 15px;
 	border-radius: 15px;
 }
-.donationLink__linkbox span {
-	font-size: 14px;
+.donationLink__linkbox p {
+	width: 100%;
+
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	
+	font-size: 15px;
 	color: var(--tg-theme-text-color);
 }
