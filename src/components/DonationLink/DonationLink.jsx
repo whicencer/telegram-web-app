@@ -7,7 +7,7 @@ export const DonationLink = () => {
 	const { address } = useWallet();
 	const [isCopied, setIsCopied] = useState(false);
 
-	const link = `https://t.me/bot_name/${address}`;
+	const link = `https://t.me/bot_name/${address.substring(2)}`;
 
 	const copyButtonClick = () => {
 		navigator.clipboard.writeText(link)
