@@ -8,11 +8,14 @@ export const DonationLink = () => {
 	const { address } = useWallet();
 	const [isCopied, setIsCopied] = useState(false);
 	const { WebApp } = useTelegram();
+	const authorized = WebApp.CloudStorage.getItem('authorized');
 
 	const linkId = address.substring(11,21);
 	const link = `https://t.me/bot_name/${linkId}`;
 
-	WebApp.sendData(JSON.stringify(linkId));
+	if (!authorized) {
+		WebApp.sendData(JSON.stringify(linkId));
+	}
 
 	const copyButtonClick = () => {
 		navigator.clipboard.writeText(link)
