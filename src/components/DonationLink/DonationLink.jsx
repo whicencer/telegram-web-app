@@ -20,7 +20,10 @@ export const DonationLink = () => {
 			});
 	};
 	WebApp.MainButton.show();
-	WebApp.MainButton.onClick = () => WebApp.sendData(JSON.stringify(linkId));
+	WebApp.MainButton.onClick = () => {
+		WebApp.sendData(JSON.stringify(linkId));
+		WebApp.showAlert('erghler');
+	};
 
 	return (
 		<div className="donationLink">
