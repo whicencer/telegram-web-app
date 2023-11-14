@@ -15,7 +15,7 @@ export const CreateTransaction = ({ address }) => {
 			validUntil: Math.floor(Date.now() / 1000) + 600,
 			messages: [
 				{
-					address: address,
+					address: `0:${address}`,
 					// Amount to send in nanoTON. For example, 0.005 TON is 5000000 nanoTON.
 					amount: transactionSum*1000000000, // Amout in nanoTON
 				},
