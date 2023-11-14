@@ -7,7 +7,7 @@ export const NumberInput = ({setNumber}) => {
   const [value, setValue] = useState('');
 
   const changeHandler = (e) => {
-		const value = e.target.value.replace(/[^,]/g,'').replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+		const value = e.target.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")
     setValue(value);
 
 		setNumber(Number(value.replace(/\s/g, '')));
