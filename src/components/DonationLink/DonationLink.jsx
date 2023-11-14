@@ -12,11 +12,6 @@ export const DonationLink = () => {
 	const linkId = address.substring(11,21);
 	const link = `https://t.me/bot_name/${linkId}`;
 
-	useEffect(() => {
-		WebApp.sendData(JSON.stringify(linkId));
-		WebApp.showAlert('send');
-	}, []);
-
 	const copyButtonClick = () => {
 		navigator.clipboard.writeText(link)
 			.then(() => {
@@ -24,6 +19,8 @@ export const DonationLink = () => {
 				setTimeout(() => setIsCopied(false), 2500);
 			});
 	};
+	WebApp.MainButton.show();
+	WebApp.MainButton.onClick = () => WebApp.sendData(JSON.stringify(linkId));
 
 	return (
 		<div className="donationLink">
