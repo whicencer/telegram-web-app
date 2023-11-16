@@ -6,8 +6,9 @@ import { useWallet } from "../../hooks/useWallet";
 export const DonationLink = () => {
 	const { address } = useWallet();
 	const [isCopied, setIsCopied] = useState(false);
+	const addressLink = address.split(':');
 
-	const link = `https://t.me/denielsminiapp_bot?start=${address}`;
+	const link = `https://t.me/denielsminiapp_bot?start=${addressLink[1]}&add=${addressLink[0]}`;
 
 	const copyButtonClick = () => {
 		navigator.clipboard.writeText(link)
