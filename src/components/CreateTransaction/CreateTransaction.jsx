@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { NumberInput } from '../Input/NumberInput/NumberInput';
 import { useTonConnectUI } from '@tonconnect/ui-react';
-import './CreateTransaction.css';
+import { beginCell } from '@ton/ton';
+import { NumberInput } from '../Input/NumberInput/NumberInput';
 import { useTelegram } from '../../hooks/useTelegram';
 import { Input } from '../Input/Input';
+import './CreateTransaction.css';
 
 export const CreateTransaction = ({ address }) => {
 	const [tonConnectUI] = useTonConnectUI();
@@ -11,6 +12,10 @@ export const CreateTransaction = ({ address }) => {
 	
 	const [transactionSum, setTransactionSum] = useState('0');
 	const [transactionMessage, setTransactionMessage] = useState('');
+	const body = beginCell()
+  .storeUint(0, 32) // write 32 zero bits to indicate that a text comment will follow
+  .storeStringTail(transactionMessage) // write our text comment
+  .endCell();
 
 	const handleSendDonate = () => {
 		const transaction = {
@@ -19,8 +24,8 @@ export const CreateTransaction = ({ address }) => {
 				{
 					address: `0:${address}`,
 					// Amount to send in nanoTON. For example, 0.005 TON is 5000000 nanoTON.
-					amount: transactionSum*1000000000, // Amout in nanoTON
-					payload: transactionMessage.toString()
+					amount: String(transactionSum*1000000000), // Amout in nanoTON
+					message: body.toBoc().toString('base64'),
 				},
 			]
 		};
