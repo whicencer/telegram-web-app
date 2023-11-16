@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useWallet } from '../../hooks/useWallet';
 import './TransactionsList.css';
+import { fromNano } from '@ton/core';
 
 export const TransactionsList = () => {
 	const { address } = useWallet();
@@ -32,7 +33,7 @@ export const TransactionsList = () => {
 								<h3>Anonym</h3>
 								<p>{transaction.in_msg?.message || 'No message'}</p>
 							</div>
-							<h5>{transaction.in_msg?.value}</h5>
+							<h5>{fromNano(transaction.in_msg?.value)} TON</h5>
 						</div>
 					);
 				})
