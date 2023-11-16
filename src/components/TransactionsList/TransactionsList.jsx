@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useWallet } from '../../hooks/useWallet';
+import './TransactionsList.css';
 
 export const TransactionsList = () => {
 	const { address } = useWallet();
@@ -13,20 +14,25 @@ export const TransactionsList = () => {
 			const res = await fetch(reqUrl);
 			const data = await res.json();
 
-			setTransactions(data.result);
+			setTransactions(data.result?.filter(transaction => transaction.out_msgs.length <= 0));
 		};
 
 		fetchTransactions();
 	}, []);
+
+	console.log(transactions);
 
 	return (
 		<div style={{ margin: 10 }}>
 			{
 				transactions?.map(transaction => {
 					return (
-						<div key={transaction.transaction_id?.hash}>
-							<h3>Anonym</h3>
-							<p>{transaction.out_msgs[0]?.message || 'No message'}</p>
+						<div key={transaction.transaction_id?.hash} className='transaction'>
+							<div>
+								<h3>Anonym</h3>
+								<p>{transaction.in_msg?.message || 'No message'}</p>
+							</div>
+							<h5>{transaction.in_msg?.value}</h5>
 						</div>
 					);
 				})
