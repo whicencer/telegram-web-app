@@ -1,8 +1,9 @@
 .transaction {
 	background-color: var(--tg-theme-bg-color);
-	padding: 5px;
+	padding: 10px;
 	margin: 5px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border-radius: 15px;
 }
