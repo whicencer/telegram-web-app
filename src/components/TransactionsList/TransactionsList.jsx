@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useWallet } from '../../hooks/useWallet';
 import './TransactionsList.css';
 import { fromNano } from '@ton/core';
+import { useTonAddress } from '@tonconnect/ui-react';
 
 export const TransactionsList = () => {
-	const { address } = useWallet();
+	const address = useTonAddress();
 	const [transactions, setTransactions] = useState();
 
 	useEffect(() => {
@@ -20,8 +20,6 @@ export const TransactionsList = () => {
 
 		fetchTransactions();
 	}, []);
-
-	console.log(transactions);
 
 	return (
 		<div style={{ margin: 10 }}>
