@@ -25,7 +25,7 @@ export const CreateTransaction = ({ address }) => {
 					address: `0:${address}`,
 					// Amount to send in nanoTON. For example, 0.005 TON is 5000000 nanoTON.
 					amount: String(transactionSum*1000000000), // Amout in nanoTON
-					message: body.toBoc().toString('base64'),
+					payload: body.toBoc().toString('base64'),
 				},
 			]
 		};
