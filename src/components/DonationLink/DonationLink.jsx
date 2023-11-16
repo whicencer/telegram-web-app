@@ -7,7 +7,7 @@ export const DonationLink = () => {
 	const { address } = useWallet();
 	const [isCopied, setIsCopied] = useState(false);
 
-	const link = `https://t.me/denielsminiapp_bot?start=${address}`;
+	const link = `https://t.me/denielsminiapp_bot?start=${address.substring(0,2)}`;
 
 	const copyButtonClick = () => {
 		navigator.clipboard.writeText(link)
