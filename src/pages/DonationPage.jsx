@@ -7,8 +7,6 @@ export const DonationPage = () => {
 	const { address } = useParams();
 	const { isAuth } = useWallet();
 
-	let realAddress = `${address[address.length-1]}:${address.substring(0, address.length-1)}`;
-
 	return (
 		<div>
 			{
@@ -16,7 +14,7 @@ export const DonationPage = () => {
 					? (
 						<>
 							<Balance />
-							<CreateTransaction address={realAddress} />
+							<CreateTransaction address={address} />
 						</>
 					)
 					: <h2>You need to authorize first</h2>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTonConnectUI } from '@tonconnect/ui-react';
-import { beginCell } from '@ton/ton';
+import { beginCell, toNano } from '@ton/ton';
 import { NumberInput } from '../Input/NumberInput/NumberInput';
 import { useTelegram } from '../../hooks/useTelegram';
 import { Input } from '../Input/Input';
@@ -24,7 +24,7 @@ export const CreateTransaction = ({ address }) => {
 				{
 					address: `${address}`,
 					// Amount to send in nanoTON. For example, 0.005 TON is 5000000 nanoTON.
-					amount: String(transactionSum*1000000000), // Amout in nanoTON
+					amount: toNano(transactionSum), // Amout in nanoTON
 					payload: body.toBoc().toString('base64'),
 				},
 			]

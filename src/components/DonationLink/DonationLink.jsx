@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Button } from "../Button/Button";
 import './DonationLink.css';
-import { useWallet } from "../../hooks/useWallet";
+import { useTonAddress } from "@tonconnect/ui-react";
 
 export const DonationLink = () => {
-	const { address } = useWallet();
+	const address = useTonAddress();
 	const [isCopied, setIsCopied] = useState(false);
-	const addressLink = address.split(':');
 
-	const link = `https://t.me/denielsminiapp_bot?start=${addressLink[1]}${addressLink[0]}`;
+	const link = `https://t.me/denielsminiapp_bot?start=${address}`;
 
 	const copyButtonClick = () => {
 		navigator.clipboard.writeText(link)
