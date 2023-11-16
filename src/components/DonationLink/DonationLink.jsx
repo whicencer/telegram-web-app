@@ -8,7 +8,7 @@ export const DonationLink = () => {
 	const [isCopied, setIsCopied] = useState(false);
 	const addressLink = address.split(':');
 
-	const link = `https://t.me/denielsminiapp_bot?start=${addressLink[1]}&add=${addressLink[0]}`;
+	const link = `https://t.me/denielsminiapp_bot?start=${addressLink[1]}${addressLink[0]}`;
 
 	const copyButtonClick = () => {
 		navigator.clipboard.writeText(link)
