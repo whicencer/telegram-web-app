@@ -7,7 +7,7 @@ export const DonationLink = () => {
 	const address = useTonAddress();
 	const [isCopied, setIsCopied] = useState(false);
 
-	const link = `https://t.me/denielsminiapp_bot?start=${address}`;
+	const link = `https://t.me/dona_ton_bot?start=${address}`;
 
 	const copyButtonClick = () => {
 		navigator.clipboard.writeText(link)
