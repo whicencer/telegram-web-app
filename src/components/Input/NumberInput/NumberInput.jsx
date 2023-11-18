@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../Input.css';
 
+// eslint-disable-next-line react/prop-types
 export const NumberInput = ({setNumber}) => {
 	const invalidChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiop[]/asdfghjkl;'zxcvbnm,!@#$%^&*()_+|}{:\">?<`~\\".split('');
   
